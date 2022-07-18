@@ -2,7 +2,6 @@ module Api
   class VesselController < Api::ApplicationController
     def index
       @vessel = Vessel.all.order(created_at: :desc)
-      render template: '/api/vessel/index', status: :ok
     end
 
     def create
@@ -15,11 +14,12 @@ module Api
     end
 
     def update
+      #return not found error if no vessel exists
       @vessel = Vessel.find(params[:id])
       return error_404 if @vessel.nil?
 
       @vessel.assign_attributes(vessel_params)
-      return error_422(@vessel.errors.full_messages) unless @vessel.valid?
+      return error_422(@vessel.errors.full_messages) unless @vessel.valid? #validation error
 
       @vessel.save
     end
