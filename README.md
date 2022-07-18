@@ -24,7 +24,7 @@
 - start local server
     ```
     $ docker-compose up              
-    $ docker-compose run --rm web rails db:migrate  #open new terminal 
+    $ docker-compose run --rm web rails db:migrate:reset  #open new terminal 
     ```
   now you can access local server with this url
   http://localhost:3000/
