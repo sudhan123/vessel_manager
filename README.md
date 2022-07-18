@@ -28,3 +28,5 @@
     ```
   now you can access local server with this url
   http://localhost:3000/
+
+## Please check ./request_sample folder for api request

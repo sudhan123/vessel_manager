@@ -1,0 +1,27 @@
+# curl --location --request PATCH 'http://localhost:3000/api/vessel/1'
+#--header 'x-api-key: shippo'
+#--header 'Cookie: __profilin=p%3Dt'
+#--form 'name="sudhan"'
+#--form 'owner_id="12"'
+#--form 'naccs_code="1202"'
+PATCH http://localhost:3000/api/vessel/1
+x-api-key: shippo
+Cookie: __profilin=p%3Dt
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="name"
+
+"sudhan"
+--WebAppBoundary
+Content-Disposition: form-data; name="owner_id"
+
+"12"
+--WebAppBoundary
+Content-Disposition: form-data; name="naccs_code"
+
+"1202"
+--WebAppBoundary--
+
+###
+

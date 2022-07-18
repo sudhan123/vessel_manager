@@ -1,0 +1,42 @@
+# curl --location --request POST 'http://localhost:3000/api/voyage'
+#--header 'x-api-key: shippo'
+#--header 'Cookie: __profilin=p%3Dt'
+#--form 'from="LA"'
+#--form 'to="NCS"'
+#--form 'date="2022-02-02"'
+#--form 'start_time="10:00"'
+#--form 'end_time="13:00"'
+#--form 'vessel_id="1"'
+POST http://localhost:3000/api/voyage
+x-api-key: shippo
+Cookie: __profilin=p%3Dt
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="from"
+
+"LA"
+--WebAppBoundary
+Content-Disposition: form-data; name="to"
+
+"NCS"
+--WebAppBoundary
+Content-Disposition: form-data; name="date"
+
+"2022-02-02"
+--WebAppBoundary
+Content-Disposition: form-data; name="start_time"
+
+"10:00"
+--WebAppBoundary
+Content-Disposition: form-data; name="end_time"
+
+"13:00"
+--WebAppBoundary
+Content-Disposition: form-data; name="vessel_id"
+
+1
+--WebAppBoundary--
+
+###
+
