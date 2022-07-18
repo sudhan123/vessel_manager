@@ -1,6 +1,5 @@
 # curl --location --request GET 'http://localhost:3000/api/voyage'
 #--header 'x-api-key: shippo'
-#--header 'Cookie: __profilin=p%3Dt'
 GET http://localhost:3000/api/voyage
 x-api-key: shippo
 Cookie: __profilin=p%3Dt
