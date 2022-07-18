@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_17_164217) do
+ActiveRecord::Schema.define(version: 2022_07_18_065909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,17 @@ ActiveRecord::Schema.define(version: 2022_07_17_164217) do
     t.index ["naccs_code"], name: "index_vessels_on_naccs_code", unique: true
   end
 
+  create_table "voyages", force: :cascade do |t|
+    t.string "from"
+    t.string "to"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "vessel_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["vessel_id"], name: "index_voyages_on_vessel_id"
+  end
+
+  add_foreign_key "voyages", "vessels"
 end
